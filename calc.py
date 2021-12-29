@@ -16,17 +16,40 @@ Significant constants
          computation result
 """
 
+print("Please select operation -\n" \
+        "1. Add\n" \
+        "2. Subtract\n" \
+        "3. Multiply\n" \
+        "4. Divide\n")
+select = int(input("Select operations form 1, 2, 3, 4 :"))
 number1=int(input("Insert the first value"))
 number2=int(input("Insert the second value"))
 
+
 addition=number1+number2
-print(f"The sumation for the two values is equal to: ,{addition}")
-
 subtraction=number1-number2
-print(f"The sumation for the two values is equal to: ,{subtraction}")
-
 multiplication=number1*number2
-print(f"The sumation for the two values is equal to: ,{multiplication}")
-
 division=number1/number2
-print(f"The sumation for the two values is equal to: ,{division}")
+
+while True:
+ select = int(input("Select operations form 1, 2, 3, 4 :"))
+ if select in (1,2,3,4):
+    number1=int(input("Insert the first value"))
+    number2=int(input("Insert the second value"))
+    if select == 1:
+       print(f"The addition for the two values is equal to: ,{addition}")
+
+    elif select == 2:
+       print(f"The subraction for the two values is equal to: ,{subtraction}")
+
+    elif select == 3:
+       print(f"The multiplication for the two values is equal to: ,{multiplication}")
+
+    elif select == 4:
+        print(f"The division for the two values is equal to: ,{division}")
+    next_calculation = input("Let,s do next calculation?(yes/no)")
+    if next_calculation == "no":
+       break
+ else:
+    print("invalid input")
+        
