@@ -1,6 +1,6 @@
 """
 Program: Simple Calculator 
-Author: Anas Tawalbeh
+Author: Kuddari
 Simple calcuatro help the user calculate the basic 4 operations including:
 addition, subtraction, multiplication and division
 Significant constants
@@ -16,54 +16,48 @@ Significant constants
          computation result
 """
 
-print("Please select operation -\n" \
-        "1. Add\n" \
-        "2. Subtract\n" \
-        "3. Multiply\n" \
-        "4. Divide\n")
-
-while True:
-        try:
-           number1=int(input("Insert the first value: "))
-           if number1 == isinstance(number1, int):
-             break
-        except ValueError:
-            print('You must enter a number')
-            continue
-
-        try:
-           number2=int(input("Insert the second value: "))
-           if number2 == isinstance(number2, int):
-             break
-        except ValueError:
-            print('You must enter a number')
-            continue
-
-        print("Please select operation -\n" \
-        "1. Add\n" \
-        "2. Subtract\n" \
-        "3. Multiply\n" \
-        "4. Divide\n")
-        select = input("Select operations form :")
-        addition=number1+number2
-        subtraction=number1-number2
-        multiplication=number1*number2
-        division=number1/number2
 
 
-
-        if select == '1' or '+' :
-              print(f"The addition for the two values is equal to: {addition}")
-
-        elif select == '2' or '-' :
-              print(f"The subraction for the two values is equal to: {subtraction}")
-
-        elif select == '3' or '*' :
-              print(f"The multiplication for the two values is equal to: {multiplication}")
-
-        elif select == '4' or  '/' :
-              print(f"The division for the two values is equal to: {division}")
-
-        else:
-              print("invalid input")
+total = 0
+cul = True
+user = input('Please enter your name :')
+while cul == True:
+      operation = str(input('Please type in the math operation you would like to complete: '))
         
+      try:
+           number = int(input("Put your number: "))
+           if number == isinstance(number,int):
+                  break
+                  
+      except ValueError:
+            print('Hey',user,',you must enter a number')
+            continue
+            
+
+      if operation == '+':
+            print('{} + {}  '.format(total, number),'= ', total + number)
+
+            total = total + number
+      elif operation == '-':
+            print('{} - {}  '.format(total, number) ,'= ',(total - number))
+            total = total - number
+
+      elif operation == '*':
+            print('{} * {}  '.format(total, number) ,'= ',(total * number))
+            total = total * number
+      elif operation == '/':
+            print('{} / {}  '.format(total, number) ,'= ',(total / number))
+            total = total / number
+
+
+      else:
+            print('You have not typed a valid operator, please run the program again.')
+     
+      answer = input('''If you want to continue press 'Y' 
+      If you want to stop press 'N' : ''')
+      if answer =='Y':
+            cul = True
+      else:
+            cul = False
+print(user,',your final result is ', total)
+print('Thank YOU SO MUCH FOR USING MY SIMPLE PROGRAM,',user)
